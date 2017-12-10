@@ -1,0 +1,17 @@
+
+
+Program wymaga zainstalowania pakietu gnuplot. 
+
+By zrobić to na systemie ubuntu trzeba wpisać komendę 
+sudo apt-get install gnuplot
+
+Na systemie windows wytarczy pobrać i uruchomić plik exe ze strony :
+https://sourceforge.net/projects/gnuplot/files/gnuplot/4.6.0/gp460-win32-setup.exe/download
+
+Po zainstalowaniu gnuplota należy skompilować program komendą (dla kompilatora gcc na ubuntu):
+
+gcc functions.c main.c -o projekt -Wall
+
+a następnie uruchomić komendą
+
+./projekt

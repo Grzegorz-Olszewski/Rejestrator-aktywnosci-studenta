@@ -1,0 +1,44 @@
+Program składa się z sześciu plików. 
+1.) data.txt
+2.) database
+3.) functions.h
+4.) main.c
+5.) functions.h
+6.) script.gp
+
+1.) Plik data.txt jest plikiem do którego zapisywane są dane z bazy danych do późniejszego generowania wykresów.
+2.) Plik database jest plikie binarnym, który służy jako baza danych, w której to zapisywani są studenci.
+3.) Plik functions. h zawiera deklaracje funkcji z functions.c. Tutaj znajdują się również 3 struktury wykorzystywane w programie.
+
+Result - struktura reprezentująca jeden wpis studenta. Zmienne reprezentują dzień, miesiąc, oraz czas wyrażony w godzinach na aktywności takie jak pisanie kody, rozwiązywanie zadań i czytanie.
+
+Student - struktura reprezentująca studenta. Zawiera tablice reprezentującą imie studenta, oraz tablice 365 struktur Result reprezentującą rok danych.
+
+CorrectCommands - struktura zawierająca komendy dostępne w programie
+
+4.) Główny plik programu, w którym to, w zależności od wpisanej komendy, inicjowane są odpowiednie funkcje w programie.
+
+5.) Plik zawierający wszystkie funkcje wykorzystywane w programie. W dalszej części opisze poszczególne funkcje zawarte w pliku:
+
+void createDatabaseIfDoesntExist() - funkcja tworząca plik binarny o nazwie 'database' o ile takowy nie istnieje. 
+
+Student *createStudent(char name[30]) - funkcja tworząca nową instancje struktury Student oraz populująca tablice results instancjami struktury Result.
+
+void addStudentToDatabase(char name[30]) - funkcja, ktora wywołuje funkcje createStudent() i zapisuje jej wynik w bazie danych.
+
+void addNewStudent() - funkcja tworzy i zapisuje nową instancje struktury Student, o imieniu uzyskanym od użytkownika, w bazie danych.
+
+void addHoursToRecord(char name[], int month, int day, 
+int h_programming, int h_doing_exercises, int h_reading) - funkcja zmienia dane dotyczące aktywności w danym dniu, u wybranego studenta
+
+void changeStudent() - funkcja, której celem jest odebranie danych od użytkownika i wywołanie funkcji addHoursToRecord z tymi danymi jako argumentami.
+
+void getCommand(char *command) - funkcja informuje użytkownika o dostepnych komendach i zapisuje komende wywołaną przez użytkownika w zmiennej znajdującej się w pliku main
+
+int printDatabase() - funkcja wypisuje stundetów zapisanych w bazie danych
+
+bool alreadyExisted(char name[]) - funkcja sprawdza czy student o danym imieniu znajduje się już w bazie danych
+
+void plot() - funkcja która generuje wykres odpowiedni do wprowadzonych przez użytkownika komend.
+
+6.) Plik zawierający komendy dla gnuplota mające na celu wygenerowanie wykresu na podstawie danych zawartych w pliku data.txt
