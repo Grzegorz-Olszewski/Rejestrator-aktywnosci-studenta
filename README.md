@@ -1,4 +1,4 @@
-Program służy do rejestrowania godzin różnych aktywności studenta informatyki, i ukazywania zebranych danych na wykresie.
+Program służy do rejestrowania godzin różnych aktywności studenta informatyki i ukazywania zebranych danych na wykresie.
 
 Po uruchomieniu programu użytkownik proszony jest o wpisanie jednej z pięciu komend.
 
